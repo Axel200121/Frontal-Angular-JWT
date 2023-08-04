@@ -4,9 +4,10 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 
 const routes: Routes = [
   {
-    path:'',
-    component: HomePageComponent
+    path:'articles',
+    loadChildren:()=>import(`@modules/articles/articles.module`).then(module=>module.ArticlesModule)
   }
+
 ];
 
 @NgModule({
