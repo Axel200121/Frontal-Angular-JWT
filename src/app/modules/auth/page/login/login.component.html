@@ -10,6 +10,9 @@
         <label for="password" class="form-label">Contraseña</label>
         <input type="password" class="form-control" formControlName="password"  >
     </div>
+    <div *ngIf="errorSession">
+        <p>Ocurrio un error con tu email o password</p>
+    </div>
     <button [disabled]="formLogin.invalid"  type="submit" class="btn btn-primary">Ingresar</button>
     <div class="mb-3">
         <p>No tienes cuenta?,<a href="#" class="link">registrate aqui</a></p>

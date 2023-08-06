@@ -3,6 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
+import { CookieService } from 'ngx-cookie-service';
+
 
 @NgModule({
   declarations: [//TODO: Decalaraciones, componentes, directivas, pipe
@@ -10,9 +13,12 @@ import { AppComponent } from './app.component';
   ],
   imports: [ // TODO: Solo de importan modulos
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    CookieService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
