@@ -1,0 +1,17 @@
+<form (submit)="sendLogin()" [formGroup]="formLogin"  class="container">
+    <fieldset disabled>
+        <legend>Inicio de Sesión</legend>
+    </fieldset>
+    <div class="mb-3">
+        <label for="email" class="form-label">Correo electronico</label>
+        <input type="text" class="form-control" placeholder="example@gmail.com" formControlName="email" >
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Contraseña</label>
+        <input type="password" class="form-control" formControlName="password"  >
+    </div>
+    <button [disabled]="formLogin.invalid"  type="submit" class="btn btn-primary">Ingresar</button>
+    <div class="mb-3">
+        <p>No tienes cuenta?,<a href="#" class="link">registrate aqui</a></p>
+    </div>
+</form>
