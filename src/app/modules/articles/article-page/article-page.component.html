@@ -1,1 +1,23 @@
-<p>article-page works!</p>
+<section class="container-table border border-2 rounded-4 p-3">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">titulo</th>
+                <th scope="col">contenido</th>
+                <th scope="col">autor</th>
+                <th scope="col">categoria</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of lisArticles">
+                <th scope="row">{{item.id}}</th>
+                <td>{{item.title}} </td>
+                <td>{{item.content}} </td>
+                <td>{{item.author}} </td>
+                <td>{{item.category}} </td>
+            </tr>
+        </tbody>
+    </table>
+
+</section>
