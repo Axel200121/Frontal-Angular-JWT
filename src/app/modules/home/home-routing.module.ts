@@ -6,6 +6,10 @@ const routes: Routes = [
   {
     path:'articles',
     loadChildren:()=>import(`@modules/articles/articles.module`).then(module=>module.ArticlesModule)
+  },
+  {
+    path: '**',
+    redirectTo: '/articles'
   }
 
 ];

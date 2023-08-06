@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Route, Router } from '@angular/router';
 import { AuthService } from '@modules/auth/services/auth.service';
 import { CookieService } from 'ngx-cookie-service';
 
@@ -16,7 +17,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private _authService: AuthService,
-    private _cookieService: CookieService
+    private _cookieService: CookieService,
+    private _router: Router
   ){}
 
   ngOnInit(): void {
@@ -40,6 +42,7 @@ export class LoginComponent implements OnInit {
       console.log("Sesion inciada correctamente",responseOk)
       const {access_token, user} = responseOk
       this._cookieService.set('token',access_token,4,'/')
+      this._router.navigate(['/','articles'])
     },
     error =>{// errores  de 400 >=
       this.errorSession=true
